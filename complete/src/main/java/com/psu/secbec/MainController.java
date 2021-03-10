@@ -1,8 +1,8 @@
 package com.psu.secbec;
 
 import com.psu.secbec.db.*;
-import com.psu.secbec.model.*;
 import com.psu.secbec.model.front.*;
+import com.psu.secbec.model.level1.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

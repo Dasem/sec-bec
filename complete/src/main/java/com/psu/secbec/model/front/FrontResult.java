@@ -1,7 +1,7 @@
 package com.psu.secbec.model.front;
 
 import com.psu.secbec.db.*;
-import com.psu.secbec.model.*;
+import com.psu.secbec.model.result.*;
 
 import java.util.*;
 import java.util.stream.*;

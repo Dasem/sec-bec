@@ -1,4 +1,4 @@
-package com.psu.secbec.model;
+package com.psu.secbec.model.level1;
 
 import javax.persistence.*;
 
@@ -11,6 +11,7 @@ public class Mail {
     private String theme;
     private String text;
     private String time;
+    private boolean isPhishing;
 
     public void setId(Long id) {
         this.id = id;
@@ -55,5 +56,13 @@ public class Mail {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public boolean isPhishing() {
+        return isPhishing;
+    }
+
+    public void setPhishing(boolean phishing) {
+        isPhishing = phishing;
     }
 }
