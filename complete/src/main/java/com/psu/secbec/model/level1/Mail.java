@@ -58,6 +58,7 @@ public class Mail {
         this.time = time;
     }
 
+    @Column(name = "is_phishing")
     public boolean isPhishing() {
         return isPhishing;
     }
