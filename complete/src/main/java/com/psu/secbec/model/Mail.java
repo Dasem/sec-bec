@@ -1,4 +1,4 @@
-package com.psu.secbec;
+package com.psu.secbec.model;
 
 import javax.persistence.*;
 
