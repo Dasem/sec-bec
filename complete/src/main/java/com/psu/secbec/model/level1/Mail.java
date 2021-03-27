@@ -11,7 +11,9 @@ public class Mail {
     private String theme;
     private String text;
     private String time;
+    private String attachment;
     private boolean isPhishing;
+    private int level;
 
     public void setId(Long id) {
         this.id = id;
@@ -58,6 +60,14 @@ public class Mail {
         this.time = time;
     }
 
+    public String getAttachment() {
+        return attachment;
+    }
+
+    public void setAttachment(String attachment) {
+        this.attachment = attachment;
+    }
+
     @Column(name = "is_phishing")
     public boolean isPhishing() {
         return isPhishing;
@@ -65,5 +75,13 @@ public class Mail {
 
     public void setPhishing(boolean phishing) {
         isPhishing = phishing;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 }
