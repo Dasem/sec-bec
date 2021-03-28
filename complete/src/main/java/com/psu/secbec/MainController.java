@@ -11,6 +11,7 @@ import java.util.*;
 import java.util.stream.*;
 
 @RestController	// This means that this class is a Controller
+@CrossOrigin
 @RequestMapping // This means URL's start with /demo (after Application path)
 public class MainController {
 	@Autowired
