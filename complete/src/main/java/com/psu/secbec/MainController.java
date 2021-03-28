@@ -18,14 +18,17 @@ public class MainController {
 
 	@GetMapping(path="/level1/mails")
 	public Iterable<Mail> getLevel1Mails() {
-		// This returns a JSON or XML with the users
 		return mailCrud.findByLevel(1);
 	}
 
 	@GetMapping(path="/level2/mails")
 	public Iterable<Mail> getLevel2Mails() {
-		// This returns a JSON or XML with the users
 		return mailCrud.findByLevel(2);
+	}
+
+	@GetMapping(path="/level3/mails")
+	public Iterable<Mail> getLevel3Mails() {
+		return mailCrud.findByLevel(3);
 	}
 
 	@PostMapping(path="/result")
