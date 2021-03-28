@@ -46,7 +46,7 @@ public class TestResult {
         this.totalPoints = totalPoints;
     }
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "mistakes_in_test",
             joinColumns = @JoinColumn(name = "test_result_id"),
