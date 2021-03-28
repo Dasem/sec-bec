@@ -14,12 +14,9 @@ public class FrontResult {
         TestResult testResult = new TestResult();
         testResult.setUsername(username);
         testResult.setTestDate(new Date());
-        testResult.setMistakes(events.stream().map(event -> {
-            Mistake mistake = new Mistake();
-            mistake.setName(event.getName());
-            mistake.setCost(mistakeCrud.findByName(event.getName()).getCost());
-            return mistake;
-        }).collect(Collectors.toList()));
+        testResult.setMistakes(events.stream().map(event ->
+                mistakeCrud.findByName(event.getName()))
+                .collect(Collectors.toList()));
         int mistakesCost = testResult.getMistakes().stream().map(Mistake::getCost).reduce(Integer::sum).orElse(0);
         testResult.setTotalPoints(100 - mistakesCost);
         return testResult;
