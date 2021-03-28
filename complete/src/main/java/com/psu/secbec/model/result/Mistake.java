@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "mistake")
 public class Mistake {
-    private int id;
+    private Integer id;
     private String name;
     private int cost;
 

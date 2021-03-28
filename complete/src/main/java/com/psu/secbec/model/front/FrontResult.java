@@ -20,7 +20,7 @@ public class FrontResult {
             mistake.setCost(mistakeCrud.findByName(event.getName()).getCost());
             return mistake;
         }).collect(Collectors.toList()));
-        int mistakesCost = testResult.getMistakes().stream().map(Mistake::getId).reduce(Integer::sum).orElse(0);
+        int mistakesCost = testResult.getMistakes().stream().map(Mistake::getCost).reduce(Integer::sum).orElse(0);
         testResult.setTotalPoints(100 - mistakesCost);
         return testResult;
     }
