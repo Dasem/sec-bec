@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Mistake {
     private Integer id;
     private String name;
+    private String description;
     private int cost;
 
     @Id
@@ -24,6 +25,14 @@ public class Mistake {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getCost() {
