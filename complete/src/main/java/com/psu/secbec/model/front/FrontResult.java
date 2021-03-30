@@ -14,7 +14,7 @@ public class FrontResult {
         TestResult testResult = new TestResult();
         testResult.setUsername(username);
         testResult.setTestDate(new Date());
-        testResult.setMistakes(events.stream().map(event ->
+        testResult.setMistakes(events.stream().distinct().map(event ->
                 mistakeCrud.findByName(event.getName()))
                 .collect(Collectors.toList()));
         int mistakesCost = testResult.getMistakes().stream().map(Mistake::getCost).reduce(Integer::sum).orElse(0);
