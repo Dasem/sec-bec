@@ -18,4 +18,9 @@ public class Event {
         }
         return false;
     }
+
+    @Override
+    public int hashCode() {
+        return name == null ? 0 : name.hashCode();
+    }
 }
