@@ -7,18 +7,20 @@ import java.util.*;
 @Table(name = "test_result")
 public class TestResult {
 
-    private int id;
+
+    private Integer id;
     private String username;
     private Date testDate;
     private int totalPoints;
     private List<Mistake> mistakes;
 
     @Id
-    public int getId() {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

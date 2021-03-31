@@ -10,7 +10,6 @@ public class Mistake {
     private String name;
     private String description;
     private int cost;
-    private List<TestResult> testResults;
 
     @Id
     public Integer getId() {
@@ -43,14 +42,5 @@ public class Mistake {
 
     public void setCost(int cost) {
         this.cost = cost;
-    }
-
-    @ManyToMany(mappedBy = "mistakes", cascade = CascadeType.ALL)
-    public List<TestResult> getTestResults() {
-        return testResults;
-    }
-
-    public void setTestResults(List<TestResult> testResults) {
-        this.testResults = testResults;
     }
 }
