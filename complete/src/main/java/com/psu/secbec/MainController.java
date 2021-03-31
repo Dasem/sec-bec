@@ -40,6 +40,18 @@ public class MainController {
 	public List<String> saveResult(@RequestBody FrontResult frontResult) {
 		TestResult result = frontResult.convert(mistakeCrud);
 		testResultCrud.save(result);
-		return result.getMistakes().stream().map(Mistake::getDescription).collect(Collectors.toList());
+		List<String> userResults = result.getMistakes().stream().map(Mistake::getDescription).collect(Collectors.toList());
+		String testAssessment = "Результат прохождения теста: ";
+		if (result.getTotalPoints() >= 90) {
+			testAssessment += "'Отлично'";
+		} else if (result.getTotalPoints() >= 80) {
+			testAssessment += "'Хорошо'";
+		} else if (result.getTotalPoints() >= 60) {
+			testAssessment += "'Плохо'";
+		} else {
+			testAssessment += "'Очень плохо'";
+		}
+		userResults.add(0, testAssessment);
+		return userResults;
 	}
 }
