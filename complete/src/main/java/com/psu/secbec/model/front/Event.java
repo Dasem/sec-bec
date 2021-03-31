@@ -13,8 +13,8 @@ public class Event {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof String) {
-            return obj.equals(name);
+        if (obj instanceof Event) {
+            return ((Event) obj).name.equals(name);
         }
         return false;
     }
